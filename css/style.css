@@ -1,17 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Começa a contar o tamanho do elemento a partir do padding */
+}
+
 body {
-  background-image: url(https://source.unsplash.com/Q7PclNhVRI0);
+  background-image: url('../images/3.png');
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   width: auto;
+  font-size: 20px;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+/* Se a tela tiver pelo menos 400px vai carregar estes estilos */
+@media (min-width: 400px){
+  body {
+    font-size: 14px;
+  }
+}
+
+header {
+  height: 100vh;    /*Utiliza toda a altura da tela*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(241, 234, 255);
 }
 
 .menu {
   background-color: white;
+  position: fixed;
+  width: 100vw;
+  height: 40px;
+  box-shadow: 20px 0 5px 5px rgba(0,0,0,10%);
+  top: 0; /*Só funciona se um position estiver acionado*/
+  z-index: 1;
 }
 
-.menu ul {
+.menu ul{
   display: flex;
   justify-content: space-around;
 }
@@ -20,21 +54,157 @@ body {
   list-style: none;
 }
 
-a {
-  color: teal;
-  text-decoration: none;
+.menu a {
+  display: block;
+  padding: 10px 30px;
 }
 
-a:hover {
-  text-decoration: underline;
+.mini-logo{
+    justify-content: left;
+    margin-right: 300px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.secao{
+  justify-content: right;
+  margin-left: 5px;
+}
+
+@media (min-width: 400px){
+  .menu a {
+  display: block;
+  padding: 10px 80px;
+  }
+
+  .menu .mini-logo{
+    padding: 10px 60px;
+  }
+}
+
+a {
+  color: rgb(154, 150, 155);
+  height: 40px;
+  font-size: 18px;
+  text-decoration: none;
+  display:center;
+}
+
+.menu a:hover {
+  background-color: rgb(170, 92, 240);
+  color: #fff;
+}
+
+.menu a:active {
+  background-color: rgb(188, 150, 254);
+  font-size: 17px;
+}
+
+.titulo {
+  transition: all 2s;
+  animation: linear 2s intro forwards;
+}
+
+
+@keyframes intro {
+  from{
+    transform: scale(0.2) translateY(30vh);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.site-title {
+  font-size: 4.5em;
+  text-transform: uppercase;
 }
 
 .site-subtitle,
 .site-title {
-  color: whitesmoke;
+  color: rgb(159, 70, 223);
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .site-subtitle {
   text-style: italic;
+  line-height: 35px;
+}
+
+.contato,
+.portifolio {
+  padding: 2em;
+  min-height: 100vh;
+}
+
+.contato h2,
+.portifolio h2{
+  font-family: 'Barlow', sans-serif;
+  color: whitesmoke;
+  margin-bottom: 1.5em;
+  font-size: 2.5em;
+}
+
+.portifolio .grid {
+  display: grid;
+  grid-gap: 1em;
+}
+
+@media (min-width: 560px) {
+  .portifolio .grid {
+    grid-template-columns: repeat(2, 240px);
+  }
+}
+
+@media (min-width: 880px) {
+  .portifolio .grid {
+    grid-template-columns: repeat(3, 260px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 48px - 8em);
+  }
+}
+
+.portifolio figure {
+  text-align: center;
+}
+
+.img-portfolio {
+  height: 180px;
+  width: 240px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 30% 10%;
+  transition: transform 500ms;
+}
+
+.img-portfolio:hover {
+  transform: scale(1.1);
+}
+
+.contato {
+  background-color: rgb(64, 58, 62);
+}
+
+.contato .icon {
+  text-align: center;
+  display: grid;
+  grid-gap: 1em;
+}
+
+.contato a {
+  color: whitesmoke;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 1px rgb(123, 28, 218);
+}
+
+.contato a:hover{
+  color: rgb(181, 108, 254);
+}
+
+.contato a:active {
+ color: rgb(88, 88, 88);
+ text-shadow: inline rgb(30,30,30); 
 }
