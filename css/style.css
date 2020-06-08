@@ -32,7 +32,13 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(241, 234, 255);
+}
+
+.doodle {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: -1;
 }
 
 .menu {
@@ -40,7 +46,7 @@ header {
   position: fixed;
   width: 100vw;
   height: 40px;
-  box-shadow: 20px 0 5px 5px rgba(0,0,0,10%);
+  box-shadow: 20px 0 5px 5px rgba(0,0,0,20%);
   top: 0; /*Só funciona se um position estiver acionado*/
   z-index: 1;
 }
@@ -90,30 +96,13 @@ a {
 }
 
 .menu a:hover {
-  background-color: rgb(170, 92, 240);
+  background-color: rgb(68, 209, 137);
   color: #fff;
 }
 
 .menu a:active {
-  background-color: rgb(188, 150, 254);
+  background-color: rgb(94, 240, 165);
   font-size: 17px;
-}
-
-.titulo {
-  transition: all 2s;
-  animation: linear 2s intro forwards;
-}
-
-
-@keyframes intro {
-  from{
-    transform: scale(0.2) translateY(30vh);
-    opacity: 0;
-  }
-  to{
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
 }
 
 .site-title {
@@ -123,28 +112,79 @@ a {
 
 .site-subtitle,
 .site-title {
-  color: rgb(159, 70, 223);
+  color: rgb(122, 119, 108);
   text-align: center;
   font-family: 'Quicksand', sans-serif;
 }
 
 .site-subtitle {
-  text-style: italic;
   line-height: 35px;
 }
 
+.sobre {
+  background: pink;
+}
+
+.sobre p {
+  color: #333;
+  text-align: justify;
+  text-indent: 2em;
+  margin-bottom: 1.5em;
+}
+
+.sobre a {
+  color: lightpink;
+}
+
+.sobre .avatar {
+  margin-left: 2em;
+}
+
+.img-avatar {
+  height: 550px;
+  width: 450px;
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+}
+
+@media (min-width: 600px) {
+  .sobre .avatar {
+    float: left;
+    overflow-wrap: end;
+    margin-right: 10px;
+  }
+
+  .img-avatar {
+    clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 20% 100%, 0 50%, 25% 0%);
+  }
+}
+
+.sobre,
 .contato,
 .portifolio {
   padding: 2em;
   min-height: 100vh;
+  width: auto;
 }
 
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.sobre h2,
 .contato h2,
 .portifolio h2{
   font-family: 'Barlow', sans-serif;
   color: whitesmoke;
   margin-bottom: 1.5em;
   font-size: 2.5em;
+}
+
+.portifolio {
+  background: darkorange;
 }
 
 .portifolio .grid {
@@ -173,38 +213,65 @@ a {
 
 .img-portfolio {
   height: 180px;
-  width: 240px;
+  width: 100%;
   object-fit: cover;
   object-position: top;
-  border-radius: 30% 10%;
-  transition: transform 500ms;
+  transition: transform 2s;
 }
 
-.img-portfolio:hover {
+.card {
+  background-color: rgb(178, 178, 178);
+  border-radius: 30px 10px 30px 10px;
+  padding: 40px;
+  margin-top: 20px;
+  text-align: center;
+  transition: transform 2s;
+}
+
+.card figcaption {
+  padding-top: 2em;
+}
+
+
+.card:hover{
   transform: scale(1.1);
+  background-color: orange;
+  color: whitesmoke;
+}
+
+.portifolio i {
+  color: rgb(142, 142, 142);
+  font-size: 30px;
+
 }
 
 .contato {
-  background-color: rgb(64, 58, 62);
+  background-color: #333;
 }
 
-.contato .icon {
+.redes-sociais .icon {
   text-align: center;
+  line-height: 10px;
   display: grid;
   grid-gap: 1em;
 }
 
-.contato a {
-  color: whitesmoke;
-  font-size: 2.5em;
-  text-shadow: 2px 2px 1px rgb(123, 28, 218);
+.redes-sociais {
+  text-align: center;
+  background-color: #333;
+  border-radius: 0 15px 15px 0;
+  bottom: 20em;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  position: fixed;
+  width: 3vw;
+  z-index: 1;
 }
 
-.contato a:hover{
-  color: rgb(181, 108, 254);
+.redes-sociais a{
+  font-size: 2em;
 }
 
-.contato a:active {
- color: rgb(88, 88, 88);
- text-shadow: inline rgb(30,30,30); 
+.redes-sociais a:hover {
+  color: rgb(255,255,255);
 }

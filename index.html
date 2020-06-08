@@ -1,78 +1,159 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Bruna Gomes- Developer</title>
-	<link rel="stylesheet" href="css/style.css">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Bruna Gomes- Developer</title>
+		<link rel="stylesheet" href="css/style.css">
 
-	<script src="https://kit.fontawesome.com/755d87e44b.js" crossorigin="anonymous"></script>
-</head>
-<body>
-	<header>
-		<nav class="menu">
-			<ul>
-				<li><a href="#sobre">Sobre</a></li>
-				<li><a href="#portifolio">Projetos</a></li>
-				<li><a href="#contato">Contato</a></li>
-			</ul>
-		</nav>
-		<div class="titulo">
-			<h1 class="site-title">Bruna Gomes</h1>
-			<h2 class="site-subtitle">Desenvolvedora</h2>
-		</div>
-	</header>
+		<script src="https://kit.fontawesome.com/755d87e44b.js" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/css-doodle@0.8.5/css-doodle.min.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav class="menu">
+				<ul class="container">
+					<li><a href="#sobre">Sobre</a></li>
+					<li><a href="#portifolio">Projetos</a></li>
+					<li><a href="#contato">Contato</a></li>
+				</ul>
+			</nav>
+			<div class="titulo">
+				<h1 class="site-title">Bruna Gomes</h1>
+				<h2 class="site-subtitle">Desenvolvedora</h2>
+				<css-doodle class="doodle">
+					:doodle {
+				        @grid: 25 / 100vmax;
+				    }
+				    --hue: calc(100 + .5 * @row() * @col());
+	    			background: hsla(var(--hue), 50%, 70%, @r(.1, .9));
+	    			clip-path: ellipse(100% 100% at @pick('0 0', '0 100%', '100% 0', '100% 100%'));
 
-	<section class="portifolio" id="portifolio">
-		<h2>Projetos</h2>
+				</css-doodle>
+			</div>
+		</header>
+		<section class="sobre container" id="sobre">
+			<h2>Sobre</h2>
 
-		<div class="grid">
-			<figure>
-				<img class="img-portfolio" src="./images/quarentena-dados.png" alt="eCommerce">
-				<figcaption>Programaria</figcaption>
+			<figure class="avatar">
+				<!--<img src="./images/profile.jpg" alt="perfil" class="img-avatar">-->
 			</figure>
-			<figure>
-				<img class="img-portfolio" src="./images/quarentena-dados.png" alt="Quarentena Dados">
-				<figcaption>Quarentena Dados</figcaption>
-			</figure>
-			<figure>
-				<img class="img-portfolio" src="./images/quarentena-dados.png" alt="quarentena Dev">
-				<figcaption>Quarentena Dev</figcaption>
-			</figure>
-			<figure>
-				<img class="img-portfolio" src="./images/quarentena-dados.png" alt="blog de mudança de tema">
-				<figcaption>ChroMath</figcaption>
-			</figure>
-		</div>
 
-	</section>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+			</p>
 
-	<section class="contato" id="contato">
-		<h2>Contato</h2>
+			<p>
+				Este site foi construido durante a incrível <a target="blank" href="https://www.alura.com.br/imersao-css">imerssão CSS da Alura</a> ;)
+			</p>
 
-		<div class="grid-icons">
-			<a target="blank" href="http://github.com/littlebru">
+		</section>
+		<section class="portifolio container" id="portifolio">
+			<h2>Projetos</h2>
+
+			<div class="grid">
+
+				<div class="card">
+					<figure>
+						<i class="fas fa-calculator"></i>
+					</figure>
+					<figcaption>Calculadora de IMC</figcaption>
+				</div>
+
+				<div class="card">
+					<figure>
+						<i class="fas fa-code"></i>
+					</figure>
+					<figcaption>Programaria</figcaption>
+				</div>
+
+				<div class="card">
+					<figure>
+						<i class="fas fa-mobile-alt"></i>
+					</figure>
+					<figcaption>Calcula minha viagem</figcaption>
+				</div>
+
+
+				<div class="card">
+					<figure>
+						<i class="fas fa-thumbs-up"></i>
+					</figure>
+					<figcaption>Botão de Like</figcaption>
+				</div>
+
+
+				<div class="card">
+					<figure>
+						<i class="fas fa-portrait"></i>
+					</figure>
+					<figcaption>Autorretrato</figcaption>
+				</div>
+
+				<div class="card">
+					<figure>
+						<i class="fas fa-dice"></i>
+					</figure>
+					<figcaption>App de Sorteio</figcaption>
+				</div>
+
+				<div class="card">
+					<figure>
+						<i class="fas fa-heartbeat"></i>
+					</figure>
+					<figcaption>Calcula meus batimentos</figcaption>
+				</div>
+				
+				<div class="card">
+					<figure>
+						<i class="fas fa-database"></i>
+					</figure>
+					<figcaption>Em desenvolvimento</figcaption>
+				</div>
+
+				<div class="card">
+					<figure>
+						<i class="fas fa-exclamation-triangle"></i>
+					</figure>
+					<figcaption>Em desenvolvimento</figcaption>
+				</div>
+
+			</div>
+		</section>
+
+		<section class="contato container" id="contato">
+			<h2>Contato</h2>
+
+			<div class="grid-icons">
+				
+			</div>
+		</section>
+
+		<div class="redes-sociais">
+			<a target="blank" href="http://github.com/littlebru" title="GitHub">
 				<i class="fab fa-github"></i>
 			</a>
 
-			<a target="blank" href="http://github.com/littlebru">
+			<a target="blank" href="http://github.com/littlebru" title="LinkedIn">
 				<i class="fab fa-linkedin"></i>
 			</a>
 
-			<a target="blank" href="http://github.com/littlebru">
+			<a target="blank" href="http://github.com/littlebru" title="Facebook">
 				<i class="fab fa-facebook-square"></i>
 			</a>
 
-			<a target="blank" href="http://github.com/littlebru">
+			<a target="blank" href="http://github.com/littlebru" title="Twitter">
 				<i class="fab fa-twitter-square"></i>
 			</a>
 
-			<a target="blank" href="http://github.com/littlebru">
+			<a target="blank" href="http://github.com/littlebru" title="CodePen">
 				<i class="fab fa-codepen"></i>
 			</a>
 
+			<a target="blank" href="https://glitch.com/@py_zza" title="Glitch">
+				<i class="fas fa-fish"></i>
+			</a>
 		</div>
 
-	</section>
-</body>
+	</body>
 </html>
